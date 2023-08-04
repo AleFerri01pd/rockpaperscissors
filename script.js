@@ -49,7 +49,7 @@ function showResult(score, playerChoice, computerChoice) {
 function onClickRPS(playerChoice) {
   const computerChoice = getComputerChoice();
   const score = getResult(playerChoice, computerChoice)
-  totalScores['umanScore'] += score
+  totalScores.umanScore += score
 
   showResult(score, playerChoice, computerChoice)
 }
@@ -65,9 +65,11 @@ function playGame() {
 
   const endGameButton = document.getElementById('endGameButton')
   endGameButton.onclick = () => endGame()
-}
+} 
 
 function endGame() {
+  totalScores.umanScore = 0
+  totalScores.computerScore = 0
   resultDiv.innerText = ''
 }
 
